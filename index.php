@@ -9,7 +9,7 @@ class MyClass
 
     public function __destruct()
     {
-        echo "thực thi khi dối tượng bị huỷ";
+        // echo "thực thi khi dối tượng bị huỷ";
     }
 
     public function __set($key, $value)
@@ -34,6 +34,8 @@ class MyClass
 
     public function __call($method, $params)
     {
+        echo $method;
+        var_dump($params);
     }
 }
 
@@ -42,3 +44,4 @@ $allZones = array(
     'userEmail'   =>  "fdai3105@gmail.com"
 );
 $hello = new MyClass($allZones);
+$hello->notExistMethod("test");
