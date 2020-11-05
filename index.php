@@ -29,7 +29,6 @@ class MyClass
 
     public function _unset($key)
     {
-
     }
 
     public function __call($method, $params)
@@ -38,8 +37,13 @@ class MyClass
         var_dump($params);
     }
 
-    public function __callStatic($method, $params) {
+    public function __callStatic($method, $params)
+    {
         echo $method;
+    }
+
+    public function __toString(){
+        echo "toString";
     }
 }
 
@@ -48,3 +52,4 @@ $allZones = array(
     'userEmail'   =>  "fdai3105@gmail.com"
 );
 $hello = new MyClass($allZones);
+$hello->__toString();
