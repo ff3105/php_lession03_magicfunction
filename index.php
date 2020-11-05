@@ -63,6 +63,10 @@ class MyClass
     public function __clone() {
         echo "clone target";
     }
+
+    public function __debugInfo() {
+        echo "debug info";
+    }
 }
 
 $allZones = array(
@@ -70,4 +74,4 @@ $allZones = array(
     'userEmail'   =>  "fdai3105@gmail.com"
 );
 $hello = new MyClass($allZones);
-$hello2 = clone $hello;
+var_dump($hello);
