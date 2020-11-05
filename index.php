@@ -45,6 +45,10 @@ class MyClass
     public function __toString(){
         echo "toString";
     }
+
+    public function __invoke($name) {
+        echo $name;
+    }
 }
 
 $allZones = array(
@@ -52,4 +56,4 @@ $allZones = array(
     'userEmail'   =>  "fdai3105@gmail.com"
 );
 $hello = new MyClass($allZones);
-$hello->__toString();
+$hello->__invoke("Dai");
