@@ -1,11 +1,13 @@
 <?php
 class MyClass {
     public function __construct(array $daiTaoLao) {
-        echo count($daiTaoLao);
         var_dump($daiTaoLao);
+        // var_dump($daiTaoLao);
     }
 
-    public function __destruct() {}
+    public function __destruct() {
+        echo "thực thi khi dối tượng bị huỷ";
+    }
 }
 
 $allZones = array(
@@ -13,3 +15,4 @@ $allZones = array(
     'userEmail'   =>  "fdai3105@gmail.com"
 );
 $hello = new MyClass($allZones);
+// $hello->__destruct();
