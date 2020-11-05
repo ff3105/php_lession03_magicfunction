@@ -1,6 +1,9 @@
 <?php
 class MyClass
 {
+    private $name;
+    private $number;
+
     public function __construct(array $daiTaoLao)
     {
         var_dump($daiTaoLao);
@@ -42,12 +45,19 @@ class MyClass
         echo $method;
     }
 
-    public function __toString(){
+    public function __toString()
+    {
         echo "toString";
     }
 
-    public function __invoke($name) {
+    public function __invoke($name)
+    {
         echo $name;
+    }
+
+    public function __sleep()
+    {
+        return array("name");
     }
 }
 
@@ -56,4 +66,4 @@ $allZones = array(
     'userEmail'   =>  "fdai3105@gmail.com"
 );
 $hello = new MyClass($allZones);
-$hello->__invoke("Dai");
+echo serialize($hello);
