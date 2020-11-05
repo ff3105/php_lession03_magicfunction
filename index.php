@@ -37,6 +37,10 @@ class MyClass
         echo $method;
         var_dump($params);
     }
+
+    public function __callStatic($method, $params) {
+        echo $method;
+    }
 }
 
 $allZones = array(
@@ -44,4 +48,3 @@ $allZones = array(
     'userEmail'   =>  "fdai3105@gmail.com"
 );
 $hello = new MyClass($allZones);
-$hello->notExistMethod("test");
