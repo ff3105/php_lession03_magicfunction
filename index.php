@@ -59,6 +59,10 @@ class MyClass
     {
         return array("name");
     }
+
+    public function __clone() {
+        echo "clone target";
+    }
 }
 
 $allZones = array(
@@ -66,4 +70,4 @@ $allZones = array(
     'userEmail'   =>  "fdai3105@gmail.com"
 );
 $hello = new MyClass($allZones);
-echo serialize($hello);
+$hello2 = clone $hello;
